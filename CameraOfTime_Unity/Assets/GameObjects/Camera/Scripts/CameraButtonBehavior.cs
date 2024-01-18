@@ -22,9 +22,9 @@ public class CameraButtonBehavior : MonoBehaviour
     IEnumerator Pressing()
     {
         IsPressing = true;
-        transform.position = PressedPos;
+        transform.localPosition = PressedPos;
         yield return new WaitForSeconds(0.5f);  
-        transform.position = NormalPos;
+        transform.localPosition = NormalPos;
         IsPressing = false;
     }
 }

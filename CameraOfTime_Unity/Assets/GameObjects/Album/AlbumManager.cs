@@ -22,6 +22,22 @@ public class AlbumManager : MonoBehaviour
     {
         Debug.Log("JoystickX: " + Input.GetAxis("Horizontal"));
         Debug.Log("JoystickY: " + Input.GetAxis("Vertical"));
+        if(Input.GetKey("joystick button 0"))
+        {
+            Debug.Log("Button 0!");
+        }
+        if (Input.GetKey("joystick button 1"))
+        {
+            Debug.Log("Button 1!");
+        }
+        if (Input.GetKey("joystick button 2"))
+        {
+            Debug.Log("Button 2!");
+        }
+        if (Input.GetKey("joystick button 3"))
+        {
+            Debug.Log("Button 3!");
+        }
     }
 
 

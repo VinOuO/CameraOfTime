@@ -25,7 +25,7 @@ public class CameraBehavior : MonoBehaviour
         {
             if (Button.Press())
             {
-                AlbumManager.Instance.GetTextureFromCamera();
+                AlbumManager.Instance.Current = AlbumManager.Instance.GetTextureFromCamera();
             }
         }
     }
