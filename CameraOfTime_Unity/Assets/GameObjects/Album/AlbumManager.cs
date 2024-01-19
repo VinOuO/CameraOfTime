@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AlbumManager : MonoBehaviour
 {
     public static AlbumManager Instance;
-    public Texture Current;
+    public List<Texture> AlbumPics;
+    public RawImage Screen;
+    public int CurrentPictureIndex = 0;
     private void OnEnable()
     {
         Instance = this;
@@ -20,6 +23,13 @@ public class AlbumManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            CurrentPictureIndex++;
+            CurrentPictureIndex %= AlbumPics.Count;
+            SetDisplayPicture(CurrentPictureIndex);
+        }
+        return;
         Debug.Log("JoystickX: " + Input.GetAxis("Horizontal"));
         Debug.Log("JoystickY: " + Input.GetAxis("Vertical"));
         if(Input.GetKey("joystick button 0"))
@@ -40,6 +50,10 @@ public class AlbumManager : MonoBehaviour
         }
     }
 
+    public void SetDisplayPicture(int index)
+    {
+        Screen.texture = AlbumPics[index];
+    }
 
     public Texture2D GetTextureFromCamera()
     {
@@ -48,16 +62,13 @@ public class AlbumManager : MonoBehaviour
         RenderTexture renderTexture = new RenderTexture(camera.pixelWidth, camera.pixelHeight, 24);
         Texture2D screenShot = new Texture2D(camera.pixelWidth, camera.pixelHeight, TextureFormat.RGBA32, false);
 
-        camera.targetTexture = renderTexture;
         camera.Render();
 
-        RenderTexture.active = renderTexture;
+        RenderTexture.active = camera.targetTexture;
 
         screenShot.ReadPixels(rect, 0, 0);
         screenShot.Apply();
 
-
-        camera.targetTexture = null;
         RenderTexture.active = null;
         return screenShot;
     }
