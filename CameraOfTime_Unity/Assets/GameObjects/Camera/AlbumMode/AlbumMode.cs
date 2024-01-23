@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AlbumManager : MonoBehaviour
+public class AlbumMode : MonoBehaviour
 {
-    public static AlbumManager Instance;
+    public static AlbumMode Instance;
     public List<Texture> AlbumPics;
     public RawImage Screen;
     public int CurrentPictureIndex = 0;
@@ -23,31 +23,18 @@ public class AlbumManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (AltControlManager.Instance.GetButton(AltControlManager.ButtonName.RightArrow, AltControlManager.ButtonState.Pressed))
         {
-            CurrentPictureIndex++;
-            CurrentPictureIndex %= AlbumPics.Count;
-            SetDisplayPicture(CurrentPictureIndex);
+            NextPic();
+            Debug.Log("NextPic");
         }
-        return;
-        Debug.Log("JoystickX: " + Input.GetAxis("Horizontal"));
-        Debug.Log("JoystickY: " + Input.GetAxis("Vertical"));
-        if(Input.GetKey("joystick button 0"))
-        {
-            Debug.Log("Button 0!");
-        }
-        if (Input.GetKey("joystick button 1"))
-        {
-            Debug.Log("Button 1!");
-        }
-        if (Input.GetKey("joystick button 2"))
-        {
-            Debug.Log("Button 2!");
-        }
-        if (Input.GetKey("joystick button 3"))
-        {
-            Debug.Log("Button 3!");
-        }
+    }
+
+    public void NextPic()
+    {
+        CurrentPictureIndex++;
+        CurrentPictureIndex %= AlbumPics.Count;
+        SetDisplayPicture(CurrentPictureIndex);
     }
 
     public void SetDisplayPicture(int index)

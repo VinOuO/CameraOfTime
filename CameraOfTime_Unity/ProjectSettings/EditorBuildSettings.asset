@@ -17,4 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PersentRoom.unity
     guid: cdbf21d22796988478ad6ab83e4f36f4
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: afbf22f7ee57a124a9d4a02149b77c24, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 96ee33cc20bb5b24796a9d5288835e8e, type: 2}

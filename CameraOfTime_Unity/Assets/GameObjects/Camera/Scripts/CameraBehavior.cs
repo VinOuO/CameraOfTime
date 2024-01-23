@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
 {
+    public GameObject Parent;
     public static CameraBehavior Instance;
     public CameraButtonBehavior Button;
     public Camera Camera;
@@ -18,23 +19,24 @@ public class CameraBehavior : MonoBehaviour
     void Start()
     {
         SetMode((int)CurrentMode);
+        Init();
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            if (Button.Press())
-            {
-                AlbumManager.Instance.AlbumPics.Add(AlbumManager.Instance.GetTextureFromCamera());
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
+        if (AltControlManager.Instance.GetButton(AltControlManager.ButtonName.UpArrow, AltControlManager.ButtonState.Pressed))
         {
             SwitchMomde();
+            Debug.Log("SwitchMode");
         }
+    }
+
+    public void Init()
+    {
+        transform.SetParent(Parent.transform);
+        transform.localPosition = Vector3.zero; 
+        transform.localRotation = Quaternion.identity; 
     }
 
     public void SwitchMomde()
