@@ -16,7 +16,7 @@ public class AltControlManager : MonoBehaviour
         return Input.GetAxis("Horizontal");
     }
 
-    public bool GetButton(ButtonName button = ButtonName.UpArrow, ButtonState state = ButtonState.None)
+    public bool GetButton(ButtonName button = ButtonName.Button3, ButtonState state = ButtonState.None)
     {
         string buttonString = "joystick button " + (int)button;
         switch (state)
@@ -39,9 +39,9 @@ public class AltControlManager : MonoBehaviour
     public enum ButtonName
     {
         Center = 0,
-        UpArrow = 1,
-        RightArrow = 2,
-        LeftArrow = 3,
+        Button3 = 1,
+        Button2 = 2,
+        Button1 = 3,
         DownArrow = 4,
     }
 

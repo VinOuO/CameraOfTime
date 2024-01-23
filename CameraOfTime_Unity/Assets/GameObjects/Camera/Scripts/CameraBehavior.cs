@@ -25,7 +25,7 @@ public class CameraBehavior : MonoBehaviour
 
     void Update()
     {
-        if (AltControlManager.Instance.GetButton(AltControlManager.ButtonName.UpArrow, AltControlManager.ButtonState.Pressed))
+        if (AltControlManager.Instance.GetButton(AltControlManager.ButtonName.Button3, AltControlManager.ButtonState.Pressed))
         {
             SwitchMomde();
             Debug.Log("SwitchMode");
