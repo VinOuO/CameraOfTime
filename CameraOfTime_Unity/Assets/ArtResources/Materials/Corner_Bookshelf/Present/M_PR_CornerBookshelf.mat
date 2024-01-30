@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_PR_Bed
+  m_Name: M_PR_CornerBookshelf
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d35d50ce89f58424a863f8b6958cd3a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: fc9966dc4b047b449aba0a8e41c65c9f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -46,15 +46,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ac6768e752f6d5843aa1e53b79fef553, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9a5510dc94030fe4c90d6c9ae2036077, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 5497ff820b380f6459d1833a75e69e06, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fd3afbc6d9d5d144a3470525b7c030f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: cf6185d0020e48c4d87a46edf244336a, type: 3}
+        m_Texture: {fileID: 2800000, guid: fe241273a12ced44fbea30eaa981bed8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -63,11 +63,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BumpScale: 0.5
+    - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 1
+    - _GlossMapScale: 0.6
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
