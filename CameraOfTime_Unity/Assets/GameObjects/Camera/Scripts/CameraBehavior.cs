@@ -36,8 +36,8 @@ public class CameraBehavior : MonoBehaviour
     public void Init()
     {
         transform.SetParent(Parent.transform);
-        transform.localPosition = Vector3.zero; 
-        transform.localRotation = Quaternion.identity; 
+        transform.localPosition = Vector3.zero + Vector3.right * 0.05f + Vector3.up * -0.05f; 
+        transform.localRotation = Quaternion.identity * Quaternion.EulerRotation(new Vector3(-150,0,0)); 
     }
 
     public void SwitchMode()

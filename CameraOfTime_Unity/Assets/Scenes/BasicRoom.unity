@@ -311,6 +311,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1135521443}
   m_LocalEulerAnglesHint: {x: 73.765, y: 323.494, z: 313.002}
+--- !u!1 &38798766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1747736116145631127, guid: 6d5cc8f363ffb264fbab69f764b8088b, type: 3}
+  m_PrefabInstance: {fileID: 679039638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &43166850
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +551,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf05f52e4e39eb429f5090cc46068a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LensDelta: 0
+  PressingTime: 0
+  PressedTime: 0
+  ReleasedTime: 0
+--- !u!1 &374532854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1045110697714398347, guid: 3d03182aa730f154e9901a5b243cc2ee, type: 3}
+  m_PrefabInstance: {fileID: 1958651968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &374532856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374532854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92708cf3052624f4ca40de97f8470964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZoomClampValue: {x: -0.96, y: 0.08}
 --- !u!1 &488400560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2272,6 +2299,10 @@ PrefabInstance:
     - target: {fileID: 5215013905152055422, guid: 3d03182aa730f154e9901a5b243cc2ee, type: 3}
       propertyPath: Parent
       value: 
+      objectReference: {fileID: 38798766}
+    - target: {fileID: 5425833776996049678, guid: 3d03182aa730f154e9901a5b243cc2ee, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 5777492835095434116, guid: 3d03182aa730f154e9901a5b243cc2ee, type: 3}
       propertyPath: m_Name
@@ -2320,7 +2351,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1045110697714398347, guid: 3d03182aa730f154e9901a5b243cc2ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 374532856}
   m_SourcePrefab: {fileID: 100100000, guid: 3d03182aa730f154e9901a5b243cc2ee, type: 3}
 --- !u!1 &2012907846
 GameObject:
@@ -3088,7 +3122,7 @@ GameObject:
   - component: {fileID: 3233429199031073941}
   - component: {fileID: 1594855756460267740}
   - component: {fileID: 1727325971290258769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
