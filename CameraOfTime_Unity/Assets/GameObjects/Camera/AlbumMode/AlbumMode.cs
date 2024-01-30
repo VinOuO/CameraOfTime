@@ -23,7 +23,7 @@ public class AlbumMode : MonoBehaviour
 
     void Update()
     {
-        if (AltControlManager.Instance.GetButton(AltControlManager.ButtonName.Button2, AltControlManager.ButtonState.Pressed))
+        if (AltControlManager.Instance.GetButton(button: AltControlManager.ButtonName.Button3, state: AltControlManager.ButtonState.Released) && AltControlManager.Instance.PressingTime <= 0.5f)
         {
             NextPic();
             Debug.Log("NextPic");

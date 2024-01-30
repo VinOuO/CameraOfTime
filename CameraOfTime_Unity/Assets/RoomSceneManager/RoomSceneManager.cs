@@ -13,13 +13,16 @@ public class RoomSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if(AltControlManager.Instance.GetButton(button: AltControlManager.ButtonName.Button3, state: AltControlManager.ButtonState.Pressing))
         {
-            SwitchRoomScene(SwitchMode.Pervious);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            SwitchRoomScene(SwitchMode.Next);
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || AltControlManager.Instance.LensDelta > 0f)
+            {
+                SwitchRoomScene(SwitchMode.Pervious);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || AltControlManager.Instance.LensDelta < 0f)
+            {
+                SwitchRoomScene(SwitchMode.Next);
+            }
         }
     }
 
@@ -31,8 +34,21 @@ public class RoomSceneManager : MonoBehaviour
         SceneManager.LoadScene(CurrentRoomScene.ToString(), LoadSceneMode.Additive);
     }
 
+    bool IsSwitchingScene = false;
+    IEnumerator CoolingDownSwitchScene()
+    {
+        IsSwitchingScene = true;
+        yield return new WaitForSeconds(2f);
+        IsSwitchingScene = false;
+    }
+
     public void SwitchRoomScene(SwitchMode mode)
     {
+        if (IsSwitchingScene)
+        {
+            return;
+        }
+        StartCoroutine(CoolingDownSwitchScene());
         if (CurrentRoomScene != RoomScene.None)
         {
             SceneManager.UnloadSceneAsync(CurrentRoomScene.ToString(), UnloadSceneOptions.None);

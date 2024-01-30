@@ -25,11 +25,12 @@ public class CameraBehavior : MonoBehaviour
 
     void Update()
     {
-        if (AltControlManager.Instance.GetButton(AltControlManager.ButtonName.Button3, AltControlManager.ButtonState.Pressed))
+        if (AltControlManager.Instance.GetButton(button: AltControlManager.ButtonName.Button3, state: AltControlManager.ButtonState.Released) && AltControlManager.Instance.PressingTime >= 0.5f && AltControlManager.Instance.PressingTime < 2f)
         {
-            SwitchMomde();
+            SwitchMode();
             Debug.Log("SwitchMode");
         }
+        //Debug.Log("Mask:" + Camera.cullingMask);
     }
 
     public void Init()
@@ -39,10 +40,20 @@ public class CameraBehavior : MonoBehaviour
         transform.localRotation = Quaternion.identity; 
     }
 
-    public void SwitchMomde()
+    public void SwitchMode()
     {
         CurrentMode++;
         CurrentMode = (CameraMode)((int)CurrentMode % (int)CameraMode.Max);
+
+        switch (CurrentMode)
+        {
+            case CameraMode.BlueLight:
+                Camera.cullingMask = 63;
+                break;
+            case CameraMode.Picture:
+                Camera.cullingMask = 119;
+                break;
+        }
 
         SetMode((int)CurrentMode);
     }

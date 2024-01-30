@@ -10,7 +10,7 @@ public class PictureMode : MonoBehaviour
 
     void Update()
     {
-        if (AltControlManager.Instance.GetButton(AltControlManager.ButtonName.Button1, AltControlManager.ButtonState.Pressed))
+        if (AltControlManager.Instance.GetButton(button: AltControlManager.ButtonName.Button3, state: AltControlManager.ButtonState.Released) && AltControlManager.Instance.PressingTime <= 0.5f)
         {
             if (CameraBehavior.Instance.Button.Press())
             {
